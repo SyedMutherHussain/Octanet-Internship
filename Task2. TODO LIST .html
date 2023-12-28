@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Task List</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #2ecc71; /* Emerald Green */
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 40px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .reward {
+            background-color: #3498db; /* Blue */
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Awesome Task List</h1>
+    </header>
+
+    <section>
+        <ul id="taskList">
+            <li>
+                <span>Task 1: Complete a coding challenge</span>
+                <button onclick="completeTask(1)">Complete</button>
+            </li>
+            <li>
+                <span>Task 2: Learn a new programming language</span>
+                <button onclick="completeTask(2)">Complete</button>
+            </li>
+            <!-- Add more tasks as needed -->
+        </ul>
+    </section>
+
+    <script>
+        function completeTask(taskNumber) {
+            const taskElement = document.getElementById(`task${taskNumber}`);
+            const rewardElement = document.createElement('span');
+            rewardElement.textContent = '🎉 Reward: 10 points!';
+            rewardElement.classList.add('reward');
+
+            taskElement.appendChild(rewardElement);
+        }
+    </script>
+</body>
+</html>
